@@ -11,6 +11,7 @@
               var currentBuzzObject = null;
 
               /**
+<<<<<<< HEAD
              * @function playSong
              * @desc currently playing song 
              * @param {Object} song
@@ -23,6 +24,8 @@
              }
 
               /**
+=======
+>>>>>>> checkpoint-7
              * @function setSong
              * @desc Stops currently playing song and loads new audio file as currentBuzzObject
              * @param {Object} song

@@ -8,7 +8,9 @@
              * @desc Buzz object audio file
              * @type {Object}
              */
+
               var currentBuzzObject = null;
+
 
               /**
              * @function playSong
@@ -37,7 +39,9 @@
                           formats: ['mp3'],
                           preload: true
                   });
-};
+
+                  currentSong = song;
+            };
 
               SongPlayer.play = function(song){
                     if (currentSong !== song){

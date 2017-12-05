@@ -26,7 +26,17 @@
              var playSong =  function (song){
                   currentBuzzObject.play();
                   song.playing = true;
-             }
+             };
+
+             /**
+            * @desc stops song current playing
+            * @type {Object}
+            */
+
+            var stopSong = function(song){
+                  currentBuzzObject.stop();
+                  SongPlayer.currentSong.playing = null;
+            };
 
              /**
             * @desc obtains song index for playbar buttons
@@ -51,8 +61,7 @@
 
               var setSong =  function(song){
                   if (currentBuzzObject){
-                      currentBuzzObject.stop();
-                      SongPlayer.currentSong.playing = null;
+                      stopSong();
                   }
                   currentBuzzObject = new buzz.sound(song.audioUrl, {
                           formats: ['mp3'],
@@ -91,12 +100,29 @@
                       currentSongIndex--;
 
                       if(currentSongIndex < 0){
-                          currentBuzzObject.stop();
-                          SongPlayer.currentSong.playing = null;
+                          stopSong();
                       }else{
                             var song = currentAlbum.songs[currentSongIndex];
                             setSong(song);
                             playSong(song);
+                      }
+              };
+
+              /**
+             * @desc activates next button on playbar, plays next song
+             * @type {Object}
+             */
+
+              SongPlayer.next = function(){
+                      var currentSongIndex = getSongIndex(SongPlayer.currentSong);
+                      currentSongIndex++;
+
+                      if(currentSongIndex > currentAlbum.songs.length){
+                          stopSong();
+                      }else {
+                          var song = currentAlbum.songs[currentSongIndex];
+                          setSong(song);
+                          playSong(song);
                       }
               };
 

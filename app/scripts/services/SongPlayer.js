@@ -82,7 +82,7 @@
                 };
 
                 /**
-               * @desc Active song object from list of songs
+               * @desc activates previous button on playbar stops at track#1
                * @type {Object}
                */
 

@@ -8,14 +8,12 @@
              */
               var currentAlbum = Fixtures.getAlbum();
 
-
               /**
              * @desc Buzz object audio file
              * @type {Object}
              */
 
               var currentBuzzObject = null;
-
 
               /**
              * @function playSong
@@ -146,7 +144,7 @@
 
               /**
              * @function setCurrentTime
-             * @desc Set current time (in seconds) of currently playing song
+             * @desc
              * @param {Number} time
              */
               SongPlayer.setCurrentTime = function(time){
